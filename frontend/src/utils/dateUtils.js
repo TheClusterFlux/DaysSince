@@ -22,9 +22,3 @@ export const getDaysSinceText = (days) => {
   if (days === 1) return '1 day ago';
   return `${days} days ago`;
 };
-
-export const getAverageDaysText = (averageDays) => {
-  if (averageDays === 0) return 'No pattern yet';
-  if (averageDays === 1) return 'Every day';
-  return `Every ${averageDays} days`;
-};

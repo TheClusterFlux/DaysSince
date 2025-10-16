@@ -1,11 +1,11 @@
 .event-card {
-  background: white;
+  background: var(--bg-secondary);
   border-radius: 0.75rem;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
   margin-bottom: 1rem;
   transition: all 0.2s ease;
-  border-left: 4px solid #E5E7EB;
+  border-left: 4px solid var(--border-color);
 }
 
 .event-card:hover {
@@ -30,7 +30,7 @@
 .event-name {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #1F2937;
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 
@@ -87,7 +87,7 @@
   text-align: center;
   padding: 1rem;
   border-radius: 0.5rem;
-  background-color: #F9FAFB;
+  background-color: var(--hover-bg);
 }
 
 .stat-value {
@@ -98,33 +98,33 @@
 
 .stat-label {
   font-size: 0.75rem;
-  color: #6B7280;
+  color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .stat-success .stat-value {
-  color: #059669;
+  color: var(--success-color);
 }
 
 .stat-warning .stat-value {
-  color: #D97706;
+  color: var(--warning-color);
 }
 
 .stat-info .stat-value {
-  color: #2563EB;
+  color: var(--info-color);
 }
 
 .stat-danger .stat-value {
-  color: #DC2626;
+  color: var(--danger-color);
 }
 
 .stat-neutral .stat-value {
-  color: #4B5563;
+  color: var(--text-secondary);
 }
 
 .event-details {
-  border-top: 1px solid #E5E7EB;
+  border-top: 1px solid var(--border-color);
   padding-top: 1rem;
 }
 

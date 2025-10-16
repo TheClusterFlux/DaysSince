@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: days-since
-          image: docker.io/keanuwatts/theclusterflux:dayssince
+          image: docker.io/keanuwatts/theclusterflux:DaysSince
           imagePullPolicy: Always
           ports:
             - containerPort: 8080

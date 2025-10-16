@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
+import ThemeToggle from './ThemeToggle';
 import './Layout.css';
 
 const Layout = ({ children }) => {
@@ -13,16 +14,19 @@ const Layout = ({ children }) => {
             <Link to="/" className="logo">
               📅 Days Since
             </Link>
-            {teamName && (
-              <nav className="nav">
-                <Link to={`/${teamName}`} className="nav-link">
-                  Dashboard
-                </Link>
-                <Link to={`/${teamName}/add-event`} className="nav-link">
-                  Add Event
-                </Link>
-              </nav>
-            )}
+            <div className="header-actions">
+              {teamName && (
+                <nav className="nav">
+                  <Link to={`/${teamName}`} className="nav-link">
+                    Dashboard
+                  </Link>
+                  <Link to={`/${teamName}/add-event`} className="nav-link">
+                    Add Event
+                  </Link>
+                </nav>
+              )}
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       </header>
