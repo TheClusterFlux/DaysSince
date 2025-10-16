@@ -1,5 +1,23 @@
-# Simple working Dockerfile
-FROM node:18-alpine
+# Multi-stage build
+FROM node:18-alpine AS frontend-builder
+
+# Set working directory for frontend
+WORKDIR /app/frontend
+
+# Copy frontend package files
+COPY frontend/package*.json ./
+
+# Install frontend dependencies
+RUN npm install
+
+# Copy frontend source
+COPY frontend/ ./
+
+# Build frontend
+RUN npm run build
+
+# Production stage
+FROM node:18-alpine AS production
 
 # Set working directory
 WORKDIR /app
@@ -13,8 +31,8 @@ RUN npm install
 # Copy backend source
 COPY backend/ ./
 
-# Copy frontend build files
-COPY frontend/build/ ./frontend/build/
+# Copy frontend build from frontend-builder stage
+COPY --from=frontend-builder /app/frontend/build ./frontend/build/
 
 # Force rebuild - timestamp
 RUN echo "Build timestamp: $(date)" > /tmp/build-info
