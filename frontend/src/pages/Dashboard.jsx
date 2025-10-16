@@ -110,13 +110,13 @@ const Dashboard = () => {
           </div>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className={`grid gap-6 ${events.length === 1 ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'}`}>
           {events.map(event => (
             <EventCard
               key={event._id}
               event={event}
               onMarkHappened={handleMarkHappened}
-              onDelete={handleDeleteEvent}
+              onDelete={() => {}} // No-op since delete button is removed
               isLoading={isLoading}
             />
           ))}

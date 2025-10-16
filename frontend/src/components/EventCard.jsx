@@ -1,5 +1,4 @@
 import React from 'react';
-import { getDaysSinceText, getAverageDaysText } from '../utils/dateUtils';
 import './EventCard.css';
 
 const EventCard = ({ event, onMarkHappened, onDelete, isLoading }) => {
@@ -31,13 +30,6 @@ const EventCard = ({ event, onMarkHappened, onDelete, isLoading }) => {
           >
             ✅ Mark as happened
           </button>
-          <button
-            className="btn btn-danger btn-sm"
-            onClick={() => onDelete(event._id)}
-            disabled={isLoading}
-          >
-            🗑️ Delete
-          </button>
         </div>
       </div>
       
@@ -61,9 +53,6 @@ const EventCard = ({ event, onMarkHappened, onDelete, isLoading }) => {
       <div className="event-details">
         <p className="text-gray-600">
           <strong>Last occurrence:</strong> {event.lastOccurrence}
-        </p>
-        <p className="text-gray-600">
-          <strong>Pattern:</strong> {getAverageDaysText(event.averageDays)}
         </p>
       </div>
     </div>
